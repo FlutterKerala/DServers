@@ -2,7 +2,7 @@
 Dart Server 
 ![](https://firebasestorage.googleapis.com/v0/b/dservers-5def7.appspot.com/o/Banner%20Image%2FDServers.png?alt=media&token=ca1c8b5a-e206-43b0-a85a-f6ed0ee28c6b)
 ##  Intro
-This package will help you to start the dart servers easily.
+This package will help you to start Dart servers easily.
 
 ## how to run dart code
 
@@ -27,7 +27,7 @@ class MyApp extends DServers {
 }
 
 ```
-Now to Start your Server use start Server
+Now to start your server use start Server
 
 ```dart
 startServer(
@@ -39,11 +39,11 @@ startServer(
  )
 
 ```
-tThe StartServer can get get few parametrs. They are ipadress take the ipadress of the server need to host, port is your need port that need to show your server. 
+The StartServer can take a few parameters. They are ipaddress take the ipaddress of the server need to host, port is the needed port that need to show your server. 
 
 ### onServerStart
 
-this will take a function which have a parameters server. This server will call when the server starts.For Example:
+This will take a function which has parameters to set up the server. This server will call when the server starts. For example:
 ```dart
 onServerStart: (server) {
           print(
@@ -54,8 +54,8 @@ The onStart will get a function which have server as the parameter with server w
 
 ### onurlNotFound
 
-This is function that dev can give if need custom 404 error page .
-This function will triger if their is a 404 error on the server request.For Example:
+This is function that dev can give if they need a custom 404 error page.
+This function will trigger if there is a 404 error on the server request. For example:
 ```dart
  onurlNotFound: (request) {
           request.response
@@ -64,11 +64,11 @@ This function will triger if their is a 404 error on the server request.For Exam
         }
 
 ```
-onurlNotFound have a parameter have a request with request we can get out the response when the this function call to users.Also we can set server status etc.To set server status you can add:
+onurlNotFound has a function as a parameter for request. We can get out the response when this function is called to users. Also we can set server status etc.To set server status you can add:
 ```dart
 statusCode =HttpStatus.notFound
 ```
-For Example:
+For example:
 ```dart
  onurlNotFound: (request) {
           request.response
@@ -78,10 +78,9 @@ For Example:
         }
 ```
 
-### parameters
+### Parameters
 
-It will take a list of parameters 
-Which take Parameters object.
+It will take a list of parameters which takes in a parameters object.
 
 ```dart
 parameters:[ 
@@ -92,11 +91,11 @@ parameters:[
 
 #### Parameters object
 
-The Parameters object take a parameters with is a string type which represent url
+The Parameters object takes parameters which is a string type representing the url
 ```dart
 Parameters Parameters({String parameters, Function onRequest})
 ```
-For Example:
+For example:
 ```dart
 Parameters(
               parameters: '/',
@@ -108,12 +107,13 @@ Parameters(
 ```
 ### parameters url
 
-The Parameters will get a string which represend a String
+The parameters will get a string which represent a string
 ```dart
 String parameters
 ```
+
 ### onRequest
-This will take a function with have a paramets request. This function will trigger when user acess those urls.For Example:
+This will take a function which has a parameters request. This function will trigger when user acess those urls. For Example:
 ```dart
 onRequest: (request) {
                 request.response
@@ -121,8 +121,8 @@ onRequest: (request) {
                   ..close();
               }
 ```
-the Request parameter can be use to do response when ever the function is called.
-Use can Also set server status. By
+the Request parameter can be used to do response whenever the function is called.
+Users can also set server status by
 ```dart
 statusCode =HttpStatus.<status>
 ```
@@ -132,10 +132,10 @@ In this you get which method is called on server by
 request.method
 ```
 
-Method can be varied from GET, POST, UPDATE etc....
+Method can be any of GET, POST, UPDATE etc....
 
-You can view HTML with this package or dart language as a responce.But I recommend you to use this as a api server to connect your flutter web or app. Flutter provide much more in their Flutter Web and you can still write website in one code base instead of writing HTML.
+You can view HTML with this package or Dart language as a response. But I recommend you to use this as an api server to connect your Flutter web or app. Flutter provides much more in their Flutter Web and you can still write website in one code base instead of writing HTML.
 
 ## Future
 
-This package was develop to show that dart or flutter is not only a client side langugae but you can use in server side to with the help of language like dart.
+This package was developed to show that Dart is not only a client side language but you can also use it serverside.
